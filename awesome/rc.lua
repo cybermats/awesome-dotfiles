@@ -29,9 +29,9 @@ local theme_config_dir = gears.filesystem.get_configuration_dir() .. "/configura
 apps = {
    network_manager = "", -- recommended: nm-connection-editor
    power_manager = "", -- recommended: xfce4-power-manager
-   terminal = "alacritty",
+   terminal = "urxvt",
    launcher = "rofi -normal-window -modi drun -show drun -theme " .. theme_config_dir .. "rofi.rasi",
-   lock = "i3lock",
+   lock = "lock",
    screenshot = "scrot -e 'mv $f ~/Pictures/ 2>/dev/null'",
    filebrowser = "nautilus"
 }
@@ -39,8 +39,8 @@ apps = {
 -- define wireless and ethernet interface names for the network widget
 -- use `ip link` command to determine these
 network_interfaces = {
-   wlan = 'wlp1s0',
-   lan = 'enp1s0'
+   wlan = '',
+   lan = 'enp3s0'
 }
 
 -- List of apps to run on start-up

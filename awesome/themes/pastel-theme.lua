@@ -42,7 +42,7 @@ theme.fg_urgent = "#ffffff"
 theme.fg_minimize = "#ffffff"
 
 -- Window Gap Distance
-theme.useless_gap = dpi(7)
+theme.useless_gap = dpi(2)
 
 -- Show Gaps if Only One Client is Visible
 theme.gap_single_client = true

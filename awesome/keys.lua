@@ -17,6 +17,8 @@ local naughty = require("naughty")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 
+local hotkeys_popup = require("awful.hotkeys_popup")
+
 -- Define mod keys
 local modkey = "Mod4"
 local altkey = "Mod1"
@@ -149,6 +151,11 @@ keys.globalkeys = gears.table.join(
       end,
       {description = "application launcher", group = "launcher"}
    ),
+
+   -- show help
+   awful.key({modkey}, "s",
+      hotkeys_popup.show_help,
+      {description="show help", group = "awesome"}),
 
    -- =========================================
    -- FUNCTION KEYS
