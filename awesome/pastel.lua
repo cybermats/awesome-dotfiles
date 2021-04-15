@@ -16,6 +16,13 @@ local gears = require("gears")
 local pastel = {}
 
 
+pastel.layouts = {
+   awful.layout.suit.tile,
+   awful.layout.suit.floating,
+   awful.layout.suit.max,
+}
+
+
 -- ===================================================================
 -- Pastel setup
 -- ===================================================================
@@ -38,7 +45,7 @@ pastel.initialize = function()
          awful.tag.add(i, {
             icon = gears.filesystem.get_configuration_dir() .. "/icons/tags/pastel/" .. i .. ".png",
             icon_only = true,
-            layout = awful.layout.suit.tile,
+            layout = pastel.layouts[1],
             screen = s,
             selected = i == 1
          })

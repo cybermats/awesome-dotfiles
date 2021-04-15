@@ -15,6 +15,11 @@ local gears = require("gears")
 
 local mirage = {}
 
+mirage.layouts = {
+   awful.layout.suit.tile,
+   awful.layout.suit.floating,
+   awful.layout.suit.max,
+}
 
 -- ===================================================================
 -- Mirage setup
@@ -42,7 +47,7 @@ mirage.initialize = function()
          awful.tag.add(i, {
             icon = icon_dir .. i .. ".png",
             icon_only = true,
-            layout = awful.layout.suit.tile,
+            layout = mirage.layouts[1],
             screen = s,
             selected = i == 1
          })
