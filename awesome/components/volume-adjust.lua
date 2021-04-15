@@ -83,15 +83,27 @@ awesome.connect_signal("volume_change",
    function()
       -- set new volume value
       awful.spawn.easy_async_with_shell(
-         "amixer sget Master | grep 'Right:' | awk -F '[][]' '{print $2}'| sed 's/[^0-9]//g'",
+	 "sleep .1 && pamixer --get-mute --get-volume",
          function(stdout)
-            local volume_level = tonumber(stdout)
+	    local volume_string = stdout
+	    local volume_mute = "false"
+	    local firstspace = stdout:find(" ")
+	    if firstspace then
+	       volume_mute = stdout:sub(0, firstspace - 1)
+	       volume_string =
+		  stdout:sub(firstspace + 1):gsub('[%c%s]', '')
+	    end
+
+            local volume_level = tonumber(volume_string)
             volume_bar.value = volume_level
             if (volume_level > 40) then
                volume_icon:set_image(icon_dir .. "volume.png")
             elseif (volume_level > 0) then
                volume_icon:set_image(icon_dir .. "volume-low.png")
-            else
+            end
+
+	    if (volume_mute == "true") then
+	       volume_bar.value = 0
                volume_icon:set_image(icon_dir .. "volume-off.png")
             end
          end,
