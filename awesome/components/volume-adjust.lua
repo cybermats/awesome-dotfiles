@@ -95,17 +95,21 @@ awesome.connect_signal("volume_change",
 	    end
 
             local volume_level = tonumber(volume_string)
+
+	    if (volume_mute == "true") then
+	       volume_level = 0
+	    end
+
             volume_bar.value = volume_level
             if (volume_level > 40) then
                volume_icon:set_image(icon_dir .. "volume.png")
             elseif (volume_level > 0) then
                volume_icon:set_image(icon_dir .. "volume-low.png")
-            end
-
-	    if (volume_mute == "true") then
+            else
 	       volume_bar.value = 0
                volume_icon:set_image(icon_dir .. "volume-off.png")
-            end
+	    end
+	    
          end,
          false
       )
