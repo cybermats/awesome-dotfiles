@@ -30,7 +30,7 @@ local exit_screen = {}
 
 local icon_size = dpi(90)
 
-local build_button = function(icon)
+local build_button = function(icon, tooltip)
    local button = wibox.widget {
       wibox.widget {
          wibox.widget {
@@ -52,6 +52,11 @@ local build_button = function(icon)
       left = dpi(24),
       right = dpi(24),
       widget = wibox.container.margin
+   }
+
+   local tt = awful.tooltip {
+      objects = { button },
+      text = tooltip,
    }
 
    return button
@@ -76,7 +81,7 @@ end
 
 local function lock_command()
    exit_screen.hide()
-   awful.spawn.with_shell("sleep 1 && " .. apps.lock)
+   awful.spawn.with_shell("sleep .1 && " .. apps.lock)
 end
 
 local function poweroff_command()
