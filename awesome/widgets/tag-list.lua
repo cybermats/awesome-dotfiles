@@ -67,7 +67,7 @@ local function list_update(w, buttons, label, data, objects)
          tbm = cache.tbm
          ibm = cache.ibm
       else
-         local icondpi = 10
+         local icondpi = 2
          ib = wibox.widget.imagebox()
          tb = wibox.widget.textbox()
          bgb = wibox.container.background()
@@ -161,7 +161,8 @@ tag_list.create = function(s)
       ),
       {},
       list_update,
-      wibox.layout.fixed.vertical()
+--      wibox.layout.fixed.vertical()
+      wibox.layout.fixed.horizontal()
    )
 end
 

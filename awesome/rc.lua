@@ -18,11 +18,12 @@ local awful = require("awful")
 
 local themes = {
    "pastel", -- 1
-   "mirage"  -- 2
+   "mirage",  -- 2
+   "molly",  -- 3
 }
 
 -- change this number to use the corresponding theme
-local theme = themes[1]
+local theme = themes[3]
 local theme_config_dir = gears.filesystem.get_configuration_dir() .. "/configuration/" .. theme .. "/"
 
 -- define default apps (global variable so other components can access it)
