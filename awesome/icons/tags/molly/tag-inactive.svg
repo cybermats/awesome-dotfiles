@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   width="36"
+   height="48"
+   viewBox="0 0 9.525 12.7"
+   version="1.1"
+   id="svg8">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient2922-7-7">
+      <stop
+         style="stop-color:#31c788;stop-opacity:1"
+         offset="0"
+         id="stop2926" />
+      <stop
+         style="stop-color:#23c87b;stop-opacity:1"
+         offset="1"
+         id="stop2928" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient2922-7-7"
+       id="linearGradient2924"
+       x1="72"
+       y1="47"
+       x2="88"
+       y2="47"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       xlink:href="#linearGradient2922-7-7"
+       id="linearGradient3705"
+       x1="72"
+       y1="47"
+       x2="88"
+       y2="47"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     style="display:inline">
+    <g
+       id="g1430"
+       style="fill:url(#linearGradient2924);fill-opacity:1"
+       transform="matrix(0.08888714,0,0,0.17530357,-0.85886032,-5.3806549)">
+      <g
+         id="g3422"
+         style="fill:url(#linearGradient3705);fill-opacity:1"
+         transform="translate(-18.152905,0.00431542)">
+        <g
+           id="g3841"
+           style="fill:#3e2a4e;fill-opacity:1">
+          <rect
+             style="opacity:1;fill:#3e2a4e;fill-opacity:1;stroke:none;stroke-width:0.248;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="rect1420"
+             width="16"
+             height="30"
+             x="72"
+             y="30" />
+          <ellipse
+             style="opacity:1;fill:#3e2a4e;fill-opacity:1;stroke:none;stroke-width:0.248;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             id="path1426"
+             cx="80"
+             cy="60"
+             rx="8"
+             ry="4" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

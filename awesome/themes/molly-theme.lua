@@ -55,9 +55,9 @@ theme.border_marked = theme.fg_urgent
 
 -- Taglist
 theme.taglist_bg_empty = theme.bg_normal
-theme.taglist_bg_occupied = "#ffffff1a"
+theme.taglist_bg_occupied = theme.bg_normal
 theme.taglist_bg_urgent = "#e91e6399"
-theme.taglist_bg_focus = theme.bg_focus
+theme.taglist_bg_focus = theme.bg_normal
 
 -- Tasklist
 theme.tasklist_font = theme.font
