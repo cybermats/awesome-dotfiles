@@ -64,7 +64,7 @@ molly.initialize = function()
 
    -- set initally selected tag to be active
    local initial_tag = awful.screen.focused().selected_tag
-   awful.tag.seticon(icon_dir .. "tag.svg", initial_tag)
+   initial_tag.icon = icon_dir .. "tag.svg"
 
       -- updates tag icons
    local function update_tag_icons()
@@ -79,11 +79,11 @@ molly.initialize = function()
          end
          -- if the tag has clients use busy icon
          for _ in pairs(t:clients()) do
-            awful.tag.seticon(icon_dir .. "tag-busy.svg", t)
+	    t.icon = icon_dir .. "tag-busy.svg"
             goto continue
          end
          -- if the tag has no clients use regular inactive icon
-         awful.tag.seticon(icon_dir .. "tag-inactive.svg", t)
+	 t.icon = icon_dir .. "tag-inactive.svg"
 
          ::continue::
       end
@@ -92,7 +92,7 @@ molly.initialize = function()
    -- Update tag icons when tag is switched
    tag.connect_signal("property::selected", function(t)
       -- set newly selected tag icon as active
-      awful.tag.seticon(icon_dir .. "tag.svg", t)
+      t.icon = icon_dir .. "tag.svg"
       update_tag_icons()
    end)
    -- Update tag icons when a client is moved to a new tag
