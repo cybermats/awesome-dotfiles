@@ -80,39 +80,17 @@ local hide_volume_adjust = gears.timer {
 
 -- show volume-adjust when "volume_change" signal is emitted
 awesome.connect_signal("volume_change",
-   function()
+   function(volume_level)
       -- set new volume value
-      awful.spawn.easy_async_with_shell(
-	 "sleep .1 && pamixer --get-mute --get-volume",
-         function(stdout)
-	    local volume_string = stdout
-	    local volume_mute = "false"
-	    local firstspace = stdout:find(" ")
-	    if firstspace then
-	       volume_mute = stdout:sub(0, firstspace - 1)
-	       volume_string =
-		  stdout:sub(firstspace + 1):gsub('[%c%s]', '')
-	    end
-
-            local volume_level = tonumber(volume_string)
-
-	    if (volume_mute == "true") then
-	       volume_level = 0
-	    end
-
-            volume_bar.value = volume_level
-            if (volume_level > 40) then
-               volume_icon:set_image(icon_dir .. "volume.png")
-            elseif (volume_level > 0) then
-               volume_icon:set_image(icon_dir .. "volume-low.png")
-            else
-	       volume_bar.value = 0
-               volume_icon:set_image(icon_dir .. "volume-off.png")
-	    end
-	    
-         end,
-         false
-      )
+      volume_bar.value = volume_level
+      if (volume_level >= 40) then
+	 volume_icon:set_image(icon_dir .. "volume.png")
+      elseif (volume_level > 0) then
+	 volume_icon:set_image(icon_dir .. "volume-low.png")
+      else
+	 volume_bar.value = 0
+	 volume_icon:set_image(icon_dir .. "volume-off.png")
+      end
 
       -- make volume_adjust component visible
       if volume_adjust.visible then

@@ -19,6 +19,8 @@ local dpi = beautiful.xresources.apply_dpi
 
 local hotkeys_popup = require("awful.hotkeys_popup")
 
+local volume_manager = require("components.volume-manager")
+
 -- Define mod keys
 local modkey = "Mod4"
 local altkey = "Mod1"
@@ -178,22 +180,19 @@ keys.globalkeys = gears.table.join(
    -- ALSA volume control
    awful.key({}, "XF86AudioRaiseVolume",
       function()
-         awful.spawn("amixer -D pulse sset Master 5%+ unmute", false)
-         awesome.emit_signal("volume_change")
+	 volume_manager.volume_up()
       end,
       {description = "volume up", group = "hotkeys"}
    ),
    awful.key({}, "XF86AudioLowerVolume",
       function()
-         awful.spawn("amixer -D pulse sset Master 5%- unmute", false)
-         awesome.emit_signal("volume_change")
+	 volume_manager.volume_down()
       end,
       {description = "volume down", group = "hotkeys"}
    ),
    awful.key({}, "XF86AudioMute",
       function()
-         awful.spawn("amixer -D pulse set Master 1+ toggle", false)
-         awesome.emit_signal("volume_change")
+	 volume_manager.toggle_muted()
       end,
       {description = "toggle mute", group = "hotkeys"}
    ),
